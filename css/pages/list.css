@@ -59,3 +59,18 @@
   padding-top: 8px;
 }
 
+@media (min-width: 981px) {
+  .list-page .page-hero h1 {
+    font-size: clamp(25px, 1.615vw, 31px);
+  }
+
+  .list-page .book-title {
+    min-height: 17px;
+    font-size: clamp(11px, 0.625vw, 12px);
+  }
+
+  .list-page .book-cover-title {
+    font-size: clamp(11px, 0.729vw, 14px);
+  }
+}
+

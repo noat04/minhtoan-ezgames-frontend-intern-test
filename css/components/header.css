@@ -11,22 +11,25 @@
   min-height: 53px;
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 18px;
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex: 0 0 auto;
   color: #2c2723;
-  font-size: 21px;
+  font-size: 16px;
   font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .logo::before {
   content: "P";
-  width: 29px;
-  height: 29px;
+  width: 27px;
+  height: 27px;
   border-radius: 999px;
   display: inline-grid;
   place-items: center;
@@ -39,7 +42,7 @@
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 20px;
   color: #5f574f;
   font-size: 12px;
   white-space: nowrap;
@@ -53,19 +56,26 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .search-btn {
-  width: 176px;
+  width: 180px;
   height: 30px;
+  flex: 0 0 180px;
+  overflow: hidden;
   padding: 0 14px 0 34px;
   border: 1px solid var(--line);
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
   background: rgba(255, 250, 241, 0.72);
   color: #756b60;
   text-align: left;
-  font-size: 12px;
+  font-size: 11px;
+  line-height: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   cursor: pointer;
   position: relative;
 }
@@ -73,7 +83,7 @@
 .search-btn::before {
   content: "";
   position: absolute;
-  left: 14px;
+  left: 13px;
   top: 50%;
   width: 10px;
   height: 10px;
@@ -85,13 +95,13 @@
 .search-btn::after {
   content: "";
   position: absolute;
-  left: 23px;
-  top: 18px;
+  left: 22px;
+  top: 50%;
   width: 5px;
   height: 1.7px;
   border-radius: 2px;
   background: #7b7166;
-  transform: rotate(45deg);
+  transform: translateY(3px) rotate(45deg);
 }
 
 .signin-btn {
@@ -105,6 +115,7 @@
   background: transparent;
   color: #2c2723;
   font-size: 12px;
+  white-space: nowrap;
   cursor: pointer;
 }
 

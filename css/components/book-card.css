@@ -22,10 +22,17 @@
   justify-content: flex-end;
   padding: 0 12px 14px;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.16), rgba(0, 0, 0, 0.08)),
+    linear-gradient(
+      135deg,
+      rgba(12, 18, 15, 0.2) 0%,
+      rgba(12, 18, 15, 0.06) 48%,
+      rgba(255, 255, 255, 0.2) 100%
+    ),
     var(--cover, #4f7b63);
   color: #fff;
-  box-shadow: inset -16px 0 26px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    inset 8px 8px 18px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(47, 37, 29, 0.14);
 }
 
 .book-cover-title {

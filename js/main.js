@@ -33,8 +33,8 @@
     return text.length > length ? `${text.slice(0, length - 1)}...` : text;
   }
 
-  function cover(book, extraClass = "") {
-    const badge = book.badge
+  function cover(book, extraClass = "", showBadge = true) {
+    const badge = showBadge && book.badge
       ? `<span class="book-badge ${book.badge.toLowerCase() === "new" ? "is-new" : ""}">${book.badge}</span>`
       : "";
 
@@ -79,7 +79,7 @@
       .map((genre, index) => {
         const count = books.filter((book) => book.genre === genre.name).length;
         return `
-          <a class="genre-card" href="./lists.html?genre=${encodeURIComponent(genre.name)}" style="background:${genreColors[index % genreColors.length]}">
+          <a class="genre-card" href="./lists.html?genre=${encodeURIComponent(genre.name)}" style="--genre-color:${genreColors[index % genreColors.length]}">
             <span>${genre.name}</span>
             <small>${count} titles</small>
           </a>
@@ -143,11 +143,11 @@
     const related = books.filter((item) => item.genre === book.genre && item.id !== book.id).slice(0, 2);
     const meta = detail.querySelector(".book-meta");
 
-    detail.querySelector(".detail-cover-wrapper .book-cover").outerHTML = cover(book, "detail-cover");
-    detail.querySelector(".book-badge").textContent = book.genre;
+    detail.querySelector(".detail-cover-wrapper .book-cover").outerHTML = cover(book, "detail-cover", false);
+    detail.querySelector(".detail-info > .book-badge").textContent = book.genre;
     detail.querySelector("#detail-title").textContent = book.title;
     detail.querySelector(".detail-info > .book-author").textContent = `by ${book.author}`;
-    detail.querySelector(".book-rating").textContent = `${book.rating.toFixed(1)} · ${book.pages || 312} pages · ${book.published || 2023}`;
+    detail.querySelector(".book-rating").textContent = `\u2605 ${book.rating.toFixed(1)} \u00b7 ${book.pages || 312} pages \u00b7 ${book.published || 2023}`;
     detail.querySelector(".detail-price span").textContent = money.format(book.price);
     detail.querySelector(".detail-price del").textContent = book.oldPrice ? money.format(book.oldPrice) : "";
     detail.querySelector("#addToBagBtn").textContent = `Add to bag - ${money.format(book.price)}`;
