@@ -18,14 +18,16 @@
 
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="./index.html">Home</a>
-                <a href="./list.html">Books</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <a href="./lists.html">Shop All</a>
+                <a href="./lists.html?genre=Fiction">Fiction</a>
+                <a href="./lists.html?genre=Mystery">Mystery</a>
+                <a href="./lists.html?genre=Children">Children</a>
+                <a href="./lists.html?genre=Poetry">Poetry</a>
             </nav>
 
             <div class="header-actions">
                 <button type="button" class="search-btn" aria-label="Search books">
-                    Search
+                    Search titles, authors...
                 </button>
 
                 <button type="button" class="signin-btn" data-open-login>
@@ -43,32 +45,30 @@
         <section class="hero-section" aria-labelledby="hero-title">
             <div class="container hero-wrapper">
                 <article class="hero-content">
-                    <p class="section-label">Bookstore</p>
-                    <h1 id="hero-title">Find your next favorite book</h1>
+                    <p class="section-label">Staff favourites</p>
+                    <h1 id="hero-title">The shelves we keep coming back to</h1>
                     <p>
-                        Discover curated stories, bestsellers, and fresh arrivals selected
-                        for every kind of reader.
+                        Our booksellers pick the titles they can't stop pressing into
+                        customers' hands.
                     </p>
 
                     <div class="hero-actions">
-                        <a href="./list.html" class="btn btn-primary">Browse books</a>
-                        <button type="button" class="btn btn-outline">View featured</button>
+                        <a href="./lists.html" class="btn btn-primary">Browse bestsellers</a>
                     </div>
                 </article>
 
-                <figure class="hero-visual">
-                    <div class="book-cover large-cover" aria-hidden="true">
-                        The Lighthouse Keeper
-                    </div>
-                    <figcaption>Featured book of the month</figcaption>
-                </figure>
+                <button type="button" class="hero-arrow hero-arrow-prev" aria-label="Previous slide"></button>
+                <button type="button" class="hero-arrow hero-arrow-next" aria-label="Next slide"></button>
+                <div class="hero-dots" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </section>
 
         <section class="genre-section" aria-labelledby="genre-title">
             <div class="container">
                 <div class="section-heading">
-                    <p class="section-label">Categories</p>
+                    <p class="section-label">Find your shelf</p>
                     <h2 id="genre-title">Browse by genre</h2>
                 </div>
 
@@ -81,8 +81,9 @@
         <section class="books-section" aria-labelledby="featured-title">
             <div class="container">
                 <div class="section-heading">
-                    <p class="section-label">This month</p>
-                    <h2 id="featured-title">Featured books</h2>
+                    <p class="section-label">Editor's picks</p>
+                    <h2 id="featured-title">Featured this month</h2>
+                    <a href="./lists.html" class="section-link">View all -></a>
                 </div>
 
                 <div class="book-grid" id="featuredBooks">
@@ -95,12 +96,12 @@
             <div class="container">
                 <article class="promo-banner">
                     <div>
-                        <p class="section-label">Special offer</p>
-                        <h2 id="promo-title">Buy 2 books and get free shipping</h2>
-                        <p>Build your reading list with our hand-picked collections.</p>
+                        <p class="section-label">The reading room</p>
+                        <h2 id="promo-title">Free shipping on every order over $35</h2>
+                        <p>Plus 15% off your first month and a weekly recommendation picked just for you.</p>
                     </div>
 
-                    <a href="./list.html" class="btn btn-primary">Shop now</a>
+                    <a href="./lists.html" class="btn btn-primary">Join free</a>
                 </article>
             </div>
         </section>
@@ -108,8 +109,9 @@
         <section class="books-section" aria-labelledby="bestseller-title">
             <div class="container">
                 <div class="section-heading">
-                    <p class="section-label">Popular</p>
+                    <p class="section-label">Most loved</p>
                     <h2 id="bestseller-title">Bestsellers</h2>
+                    <a href="./lists.html" class="section-link">View all -></a>
                 </div>
 
                 <div class="book-grid" id="bestsellerBooks">
@@ -121,8 +123,9 @@
         <section class="books-section" aria-labelledby="new-title">
             <div class="container">
                 <div class="section-heading">
-                    <p class="section-label">Fresh picks</p>
+                    <p class="section-label">Hot off the press</p>
                     <h2 id="new-title">New arrivals</h2>
+                    <a href="./lists.html" class="section-link">View all -></a>
                 </div>
 
                 <div class="book-grid" id="newBooks">
@@ -134,16 +137,49 @@
 
     <footer class="site-footer">
         <div class="container footer-wrapper">
-            <section>
+            <section class="footer-brand">
                 <h2 class="footer-title">Pages & Co.</h2>
-                <p>Curated books for curious readers.</p>
+                <p>An independent bookshop for readers who like to take their time. Open since 1998.</p>
+                <div class="social-links"><a href="#">In</a><a href="#">X</a><a href="#">f</a></div>
             </section>
 
             <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="./index.html">Home</a>
-                <a href="./list.html">Books</a>
-                <a href="./checkout.html">Bag</a>
+                <section>
+                    <h3>Shop</h3>
+                    <a href="./lists.html">New arrivals</a>
+                    <a href="./lists.html">Bestsellers</a>
+                    <a href="./lists.html?genre=Fiction">Fiction</a>
+                    <a href="./lists.html?genre=Children">Children</a>
+                    <a href="#">Gift cards</a>
+                </section>
+                <section>
+                    <h3>About</h3>
+                    <a href="#">Our story</a>
+                    <a href="#">Events</a>
+                    <a href="#">Visit the shop</a>
+                    <a href="#">Journal</a>
+                </section>
+                <section>
+                    <h3>Help</h3>
+                    <a href="#">Shipping</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact</a>
+                </section>
             </nav>
+
+            <section class="footer-newsletter">
+                <h3>The reading room</h3>
+                <p>One handpicked recommendation in your inbox each week.</p>
+                <form>
+                    <input type="email" placeholder="Email address">
+                    <button type="submit">Join</button>
+                </form>
+            </section>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Pages & Co. · Privacy · Terms</span>
+            <span>Free shipping on orders over $35</span>
         </div>
     </footer>
 
@@ -155,17 +191,19 @@
                 ×
             </button>
 
-            <h2 id="login-title">Sign in</h2>
+            <h2 id="login-title">Welcome back</h2>
+            <p>Sign in to access your bag, orders and wishlist.</p>
 
             <form id="loginForm" class="login-form">
                 <label for="loginEmail">Email</label>
-                <input type="email" id="loginEmail" required />
+                <input type="email" id="loginEmail" placeholder="you@example.com" required />
 
                 <label for="loginPassword">Password</label>
-                <input type="password" id="loginPassword" required />
+                <input type="password" id="loginPassword" placeholder="••••••••" required />
 
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
+            <p class="modal-note">New here? <a href="#">Create an account</a></p>
         </section>
     </aside>
 

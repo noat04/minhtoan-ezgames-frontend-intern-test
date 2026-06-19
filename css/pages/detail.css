@@ -1,0 +1,125 @@
+﻿.detail-section {
+  padding: 29px 0 44px;
+}
+
+.book-detail {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 43px;
+  align-items: start;
+}
+
+.detail-cover-wrapper figcaption,
+.hero-visual,
+.bag-items h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.detail-cover {
+  width: 228px;
+  min-height: 333px;
+  margin-left: auto;
+  box-shadow: var(--shadow);
+}
+
+.detail-cover .book-cover-title {
+  max-width: 170px;
+  font-size: 18px;
+}
+
+.detail-info {
+  padding-top: 1px;
+}
+
+.detail-info h1 {
+  margin: 13px 0 2px;
+  font-size: 36px;
+}
+
+.detail-info > .book-author {
+  font-size: 14px;
+}
+
+.book-rating {
+  margin: 12px 0;
+  color: #3d332d;
+  font-size: 12px;
+}
+
+.book-rating::first-letter {
+  color: var(--gold);
+}
+
+.detail-price span {
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.book-description {
+  max-width: 435px;
+  margin: 15px 0 21px;
+  color: #121820;
+  font-size: 14px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.detail-actions .btn-primary {
+  min-width: 150px;
+}
+
+.detail-actions .btn-outline {
+  min-width: 90px;
+  min-height: 33px;
+  font-size: 12px;
+}
+
+.book-meta {
+  max-width: 413px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 30px;
+  color: #16120f;
+  font-size: 11px;
+}
+
+.book-meta p {
+  display: grid;
+  gap: 3px;
+}
+
+.book-meta strong {
+  color: #85766b;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.detail-section + .books-section .book-grid {
+  width: 263px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.detail-section + .books-section .book-card {
+  padding: 9px;
+}
+
+.detail-section + .books-section .book-cover {
+  min-height: 148px;
+}
+
+.detail-section + .books-section .book-cover-title {
+  font-size: 12px;
+}
+

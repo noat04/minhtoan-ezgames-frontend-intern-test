@@ -16,12 +16,17 @@
 
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="./index.html">Home</a>
-                <a href="./list.html">Books</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <a href="./lists.html">Shop All</a>
+                <a href="./lists.html?genre=Fiction">Fiction</a>
+                <a href="./lists.html?genre=Mystery">Mystery</a>
+                <a href="./lists.html?genre=Children">Children</a>
+                <a href="./lists.html?genre=Poetry">Poetry</a>
             </nav>
 
             <div class="header-actions">
+                <button type="button" class="search-btn" aria-label="Search books">
+                    Search titles, authors...
+                </button>
                 <button type="button" class="signin-btn" data-open-login>Sign in</button>
                 <a href="./checkout.html" class="bag-link">
                     Bag <span class="bag-count">0</span>
@@ -52,6 +57,10 @@
                         <p>Filter and sort books by your reading preference.</p>
                     </div>
 
+                    <nav class="filter-bar" id="filterBar" aria-label="Book genre filters">
+                        <!-- Filter buttons rendered by JavaScript -->
+                    </nav>
+
                     <form class="sort-form">
                         <label for="sortSelect">Sort by</label>
                         <select id="sortSelect">
@@ -63,10 +72,6 @@
                     </form>
                 </div>
 
-                <nav class="filter-bar" id="filterBar" aria-label="Book genre filters">
-                    <!-- Filter buttons rendered by JavaScript -->
-                </nav>
-
                 <div class="book-grid" id="bookList">
                     <!-- Book cards rendered by JavaScript -->
                 </div>
@@ -76,16 +81,49 @@
 
     <footer class="site-footer">
         <div class="container footer-wrapper">
-            <section>
+            <section class="footer-brand">
                 <h2 class="footer-title">Pages & Co.</h2>
-                <p>Curated books for curious readers.</p>
+                <p>An independent bookshop for readers who like to take their time. Open since 1998.</p>
+                <div class="social-links"><a href="#">In</a><a href="#">X</a><a href="#">f</a></div>
             </section>
 
             <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="./index.html">Home</a>
-                <a href="./list.html">Books</a>
-                <a href="./checkout.html">Bag</a>
+                <section>
+                    <h3>Shop</h3>
+                    <a href="./lists.html">New arrivals</a>
+                    <a href="./lists.html">Bestsellers</a>
+                    <a href="./lists.html?genre=Fiction">Fiction</a>
+                    <a href="./lists.html?genre=Children">Children</a>
+                    <a href="#">Gift cards</a>
+                </section>
+                <section>
+                    <h3>About</h3>
+                    <a href="#">Our story</a>
+                    <a href="#">Events</a>
+                    <a href="#">Visit the shop</a>
+                    <a href="#">Journal</a>
+                </section>
+                <section>
+                    <h3>Help</h3>
+                    <a href="#">Shipping</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Contact</a>
+                </section>
             </nav>
+
+            <section class="footer-newsletter">
+                <h3>The reading room</h3>
+                <p>One handpicked recommendation in your inbox each week.</p>
+                <form>
+                    <input type="email" placeholder="Email address">
+                    <button type="submit">Join</button>
+                </form>
+            </section>
+        </div>
+        <div class="container footer-bottom">
+            <span>© 2026 Pages & Co. · Privacy · Terms</span>
+            <span>Free shipping on orders over $35</span>
         </div>
     </footer>
 
@@ -97,17 +135,19 @@
                 ×
             </button>
 
-            <h2 id="login-title">Sign in</h2>
+            <h2 id="login-title">Welcome back</h2>
+            <p>Sign in to access your bag, orders and wishlist.</p>
 
             <form id="loginForm" class="login-form">
                 <label for="loginEmail">Email</label>
-                <input type="email" id="loginEmail" required />
+                <input type="email" id="loginEmail" placeholder="you@example.com" required />
 
                 <label for="loginPassword">Password</label>
-                <input type="password" id="loginPassword" required />
+                <input type="password" id="loginPassword" placeholder="••••••••" required />
 
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
+            <p class="modal-note">New here? <a href="#">Create an account</a></p>
         </section>
     </aside>
 

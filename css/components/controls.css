@@ -1,0 +1,14 @@
+﻿.signin-btn,
+.btn,
+.bag-link,
+.filter-bar button,
+.quantity-control,
+.footer-newsletter button {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

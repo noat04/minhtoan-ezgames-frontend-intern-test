@@ -1,0 +1,122 @@
+﻿.bag-section {
+  min-height: 390px;
+}
+
+.bag-layout {
+  --container-width: 1024px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 366px;
+  gap: 44px;
+  align-items: start;
+}
+
+.cart-item,
+.order-summary {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 250, 241, 0.62);
+}
+
+.cart-item {
+  min-height: 110px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 56px 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.cart-thumb {
+  width: 56px;
+  height: 80px;
+  border-radius: 2px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.18)),
+    var(--cover, #4f7b63);
+}
+
+.cart-title {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.cart-author {
+  color: #5e5148;
+  font-size: 13px;
+}
+
+.remove-btn {
+  margin-top: 7px;
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.quantity-control {
+  width: 94px;
+  min-height: 35px;
+  justify-content: space-around;
+  background: transparent;
+  color: #0f151b;
+  font-weight: 900;
+}
+
+.quantity-control button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.cart-line-price {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.order-summary {
+  padding: 18px 22px 24px;
+}
+
+.order-summary h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.order-summary dl div {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  color: #493f36;
+}
+
+.summary-total {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px !important;
+  color: #111820 !important;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.summary-total dd {
+  color: var(--primary);
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 12px;
+  min-height: 46px;
+  font-size: 16px;
+}
+
+.checkout-note {
+  margin-top: 10px;
+  color: #5c5046;
+  text-align: center;
+  font-size: 12px;
+}
+
