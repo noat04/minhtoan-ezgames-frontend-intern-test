@@ -19,9 +19,18 @@
         </nav>
 
         <div class="header-actions">
-          <button type="button" class="search-btn" aria-label="Search books">
-            Search titles, authors...
-          </button>
+          <form class="search-form" action="./lists.html" method="get" role="search">
+            <label class="visually-hidden" for="site-search">Search books</label>
+            <button type="submit" class="search-submit" aria-label="Submit search"></button>
+            <input
+              type="search"
+              class="search-input"
+              id="site-search"
+              name="search"
+              placeholder="Search titles, authors..."
+              autocomplete="off"
+            >
+          </form>
           <button type="button" class="signin-btn" data-open-login>Sign in</button>
           <a href="./checkout.html" class="bag-link" data-page="checkout">
             Bag <span class="bag-count">0</span>
@@ -42,6 +51,9 @@
     header.querySelectorAll(`[data-page="${pageName}"]`).forEach((link) => {
       link.setAttribute("aria-current", "page");
     });
+
+    const searchQuery = new URLSearchParams(window.location.search).get("search");
+    if (searchQuery) header.querySelector(".search-input").value = searchQuery;
   }
 
   App.SiteHeader = { init };

@@ -10,8 +10,13 @@
   display: flex;
   align-items: center;
   background:
-    linear-gradient(120deg, rgba(53, 91, 69, 0.98), rgba(47, 88, 86, 0.98)),
+    linear-gradient(
+      120deg,
+      var(--hero-start, rgba(53, 91, 69, 0.98)),
+      var(--hero-end, rgba(47, 88, 86, 0.98))
+    ),
     var(--green);
+  transition: background-color 180ms ease;
 }
 
 .hero-content {
@@ -88,14 +93,17 @@
   transform: translateX(-50%);
 }
 
-.hero-dots span {
+.hero-dots button {
   width: 7px;
   height: 7px;
+  border: 0;
   border-radius: 999px;
+  padding: 0;
   background: rgba(255, 248, 234, 0.62);
+  cursor: pointer;
 }
 
-.hero-dots span:nth-child(2) {
+.hero-dots button.is-active {
   width: 20px;
   background: var(--gold);
 }

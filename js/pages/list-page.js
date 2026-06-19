@@ -15,16 +15,33 @@
 
     const params = new URLSearchParams(window.location.search);
     let activeGenre = params.get("genre") || "All";
+    const searchTerm = (params.get("search") || "").trim().toLowerCase();
     const allGenres = ["All", ...genres.map((genre) => genre.name), "Biography"];
+    const collectionCount = document.getElementById("collectionCount");
 
     function draw() {
-      const filtered = activeGenre === "All"
+      const genreMatches = activeGenre === "All"
         ? books
         : books.filter((book) => book.genre === activeGenre);
+      const filtered = searchTerm
+        ? genreMatches.filter((book) => {
+            const searchableText = `${book.title} ${book.author} ${book.genre}`.toLowerCase();
+            return searchableText.includes(searchTerm);
+          })
+        : genreMatches;
 
-      target.innerHTML = sortBooks(filtered, sortSelect.value)
+      const cards = sortBooks(filtered, sortSelect.value)
         .map(App.BookCard.card)
         .join("");
+      target.innerHTML = cards || `
+        <p class="empty-results">No books found. Try another title, author or genre.</p>
+      `;
+
+      if (collectionCount) {
+        collectionCount.textContent = searchTerm
+          ? `${filtered.length} results for "${params.get("search").trim()}"`
+          : `${filtered.length} titles in the collection`;
+      }
 
       filterBar.querySelectorAll("button").forEach((button) => {
         button.classList.toggle("active", button.dataset.genre === activeGenre);

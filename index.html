@@ -15,7 +15,7 @@
     <main>
         <section class="hero-section" aria-labelledby="hero-title">
             <div class="container hero-wrapper">
-                <article class="hero-content">
+                <article class="hero-content" aria-live="polite">
                     <p class="section-label">Staff favourites</p>
                     <h1 id="hero-title">
                         <span>The shelves</span>
@@ -34,8 +34,10 @@
 
                 <button type="button" class="hero-arrow hero-arrow-prev" aria-label="Previous slide"></button>
                 <button type="button" class="hero-arrow hero-arrow-next" aria-label="Next slide"></button>
-                <div class="hero-dots" aria-hidden="true">
-                    <span></span><span></span><span></span>
+                <div class="hero-dots" role="group" aria-label="Choose hero slide">
+                    <button type="button" data-slide="0" aria-label="Show slide 1"></button>
+                    <button type="button" data-slide="1" aria-label="Show slide 2"></button>
+                    <button type="button" data-slide="2" aria-label="Show slide 3"></button>
                 </div>
             </div>
         </section>
