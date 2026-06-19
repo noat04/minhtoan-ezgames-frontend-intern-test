@@ -1,0 +1,55 @@
+﻿.section-label {
+  margin-bottom: 4px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+}
+
+.hero-content .section-label,
+.genre-section,
+.books-section,
+.promo-section,
+.book-list-section,
+.bag-section {
+  padding: 0 0 46px;
+}
+
+.section-heading {
+  position: relative;
+  margin-bottom: 21px;
+}
+
+.section-heading h2,
+.page-hero h1,
+.detail-info h1 {
+  color: var(--ink);
+  font-size: 31px;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.section-link {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  color: var(--primary);
+  font-size: 13px;
+}
+.breadcrumb {
+  margin-bottom: 8px;
+  display: flex;
+  gap: 8px;
+  color: #3c342d;
+  font-size: 12px;
+}
+
+.page-hero {
+  padding: 37px 0 22px;
+}
+
+.page-hero p {
+  color: #554b41;
+  font-style: italic;
+}
