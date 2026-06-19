@@ -1,200 +1,181 @@
-# EZ Games - Frontend Developer Intern Technical Test
+# Pages & Co. - Frontend Developer Intern Technical Test
 
-## Overview
+## Project Overview
 
-This project is a frontend implementation of a bookstore website based on the design provided in the EZ Games Frontend Developer Intern Technical Test.
+Pages & Co. is a responsive bookstore website implemented from the reference designs supplied for the EZ Games Frontend Developer Intern Technical Test.
 
-The goal of this project is to demonstrate:
+The project demonstrates the main evaluation criteria in the brief:
 
-* Semantic HTML structure
-* Reusable component thinking
-* Responsive design using pure CSS (Flexbox & Grid)
-* JavaScript interactions
-* Clean project organization
-* Attention to detail and UI implementation skills
+- translating supplied layouts into working pages;
+- organizing content with semantic HTML;
+- identifying and reusing shared UI components;
+- building responsive layouts with pure CSS, Flexbox, and Grid;
+- implementing browser interactions with Vanilla JavaScript;
+- maintaining clear project structure and consistent visual details.
 
----
+No CSS framework, JavaScript framework, UI library, or build tool is required.
 
-## Pages
+## Requirement Coverage
 
-### Home Page
+| Evaluation criterion | Implementation in this project |
+| --- | --- |
+| Layout analysis | Four pages and one shared modal were recreated from the supplied designs: Home, Book Listing, Book Detail, Bag/Checkout, and Login Modal. |
+| Semantic HTML | Pages use `header`, `nav`, `main`, `section`, `article`, `figure`, `aside`, `footer`, `form`, and correctly typed buttons where appropriate. |
+| Reusable components | Header, footer, login modal, book cover, book card, and cart state are shared instead of being duplicated in every page. |
+| Responsive CSS | Flexbox, CSS Grid, fluid containers, CSS custom properties, and media queries adapt the interface for desktop, tablet, and mobile widths. |
+| JavaScript interactions | Hero slider, search, genre filtering, sorting, detail rendering, add-to-bag, cart quantity/removal, persistent bag count, and login modal controls are functional. |
+| Code organization | CSS is separated into base, component, page, and responsive layers. JavaScript is separated into data, core, component, and page modules. |
+| UI consistency | Shared colors, spacing, borders, typography, buttons, gradients, and book-card proportions are controlled through reusable styles and CSS variables. |
 
-* Hero Slider
-* Browse by Genre
-* Featured Books
-* Promotional Banner
-* Bestsellers
-* New Arrivals
-* Footer
+## Implemented Pages
 
-### Books Listing Page
+### Home (`index.html`)
 
-* Book Collection Grid
-* Category Filters
-* Sorting Options
+- Three-state hero slider with previous/next controls and indicator dots
+- Browse-by-genre cards with dynamically calculated book counts
+- Featured, bestseller, and new-arrival sections rendered from shared book data
+- Promotional reading-room banner
+- Shared responsive header, footer, and login modal
 
-### Book Detail Page
+### Book Listing (`lists.html`)
 
-* Book Information
-* Wishlist Button
-* Add to Bag
-* Related Books
+- Responsive book collection grid
+- Genre filtering
+- Sorting by price and rating
+- Search by title, author, or genre using the header search form
+- Dynamic result count and empty-result state
+- Links from book cards to the corresponding detail page
 
-### Bag / Checkout Page
+### Book Detail (`detail.html`)
 
-* Shopping Bag
-* Quantity Controls
-* Order Summary
+- Book selection through the `id` query parameter
+- Dynamic cover, title, author, rating, price, and metadata
+- Add-to-bag interaction
+- Related-book recommendations
+- Responsive two-column-to-single-column layout
+
+### Bag / Checkout (`checkout.html`)
+
+- Cart items rendered from persisted cart state
+- Increase and decrease quantity controls
+- Remove-item interaction
+- Dynamic subtotal, total, and shared header bag count
+- Empty-cart state
+- Responsive cart and order-summary layout
 
 ### Login Modal
 
-* Email Login Form
-* Modal Open / Close Interaction
+- Shared modal available from every page
+- Open and close controls
+- Close on overlay click or `Escape`
+- Focus moves to the email field when opened
+- Native HTML validation for required email and password fields
 
----
+## Architecture
 
-## Technologies
+The JavaScript follows a small component-oriented Vanilla JavaScript architecture. Modules register themselves on the shared `window.PagesApp` namespace. `js/main.js` initializes only the page modules loaded by the current document.
 
-* HTML5
-* CSS3
+```text
+.
+|-- index.html
+|-- lists.html
+|-- detail.html
+|-- checkout.html
+|-- css/
+|   |-- base/          # variables and reset
+|   |-- components/    # shared UI styles
+|   |-- pages/         # page-specific layouts
+|   |-- responsive.css # shared media queries
+|   `-- style.css      # CSS import entry point
+`-- js/
+    |-- data/          # book, genre, and mock user data
+    |-- core/          # shared utilities and cart storage
+    |-- components/    # reusable rendered components
+    |-- pages/         # page-specific rendering and interactions
+    `-- main.js        # application entry point
+```
 
-  * Flexbox
-  * CSS Grid
-  * CSS Variables
-* Vanilla JavaScript (ES6)
-
-No CSS framework or UI library was used.
+This separation keeps page logic independent while allowing shared components and data to be reused across the website.
 
 ## Reusable Components
 
-The project was designed around reusable UI components:
+- `SiteHeader`: brand, navigation, search form, sign-in action, and bag counter
+- `SiteFooter`: navigation groups, social links, and newsletter form
+- `LoginModal`: shared dialog markup and modal behavior
+- `BookCard`: reusable book-cover and product-card renderer
+- `CartStore`: `localStorage` access and synchronized bag count
+- `Utils`: shared currency formatting, genre colors, and text helpers
 
-* Header
-* Footer
-* Book Card
-* Book Grid
-* Genre Card
-* Breadcrumb
-* Hero Slider
-* Promotional Banner
-* Login Modal
-* Cart Item
-* Order Summary
+## CSS Strategy
 
-This approach helps improve maintainability and scalability.
+- CSS custom properties centralize the color palette, container width, spacing, and shared design values.
+- CSS Grid handles book grids, genre grids, detail layouts, checkout layouts, and footer columns.
+- Flexbox handles navigation, controls, headings, actions, and smaller one-dimensional layouts.
+- Book covers and genre cards use subtle `135deg` gradients and shadows to reproduce the supplied visual treatment.
+- Shared responsive breakpoints are defined at `980px` and `640px`, with page-level rules where a layout needs specific adjustment.
 
----
+## JavaScript Design
 
-## Semantic HTML
+### Shared state
 
-The website uses semantic HTML elements whenever appropriate:
+The bag is stored under the `pagesAndCoCart` key in `localStorage`. Cart changes persist after page reload and update every visible `.bag-count` element.
 
-* header
-* nav
-* main
-* section
-* article
-* figure
-* aside
-* footer
-* form
-* button
+### Data-driven rendering
 
-This improves accessibility, readability and maintainability.
+Book and genre information is stored separately from page markup. Home sections, listing results, book details, recommendations, and cart items are generated from shared data.
 
----
+### Event handling
 
-## Responsive Design
-
-Responsive layouts are implemented using:
-
-* CSS Flexbox
-* CSS Grid
-* Media Queries
-
-Supported breakpoints:
-
-* Desktop (1200px+)
-* Laptop (1024px+)
-* Tablet (768px+)
-* Mobile (<768px)
-
-The layout adapts across all major screen sizes.
-
----
-
-## JavaScript Features
-
-### Hero Slider
-
-* Previous / Next Navigation
-* Active Indicator Dots
-
-### Login Modal
-
-* Open Modal
-* Close Modal
-* Close on Overlay Click
-* Close on ESC Key
-
-### Shopping Bag
-
-* Add To Bag
-* Quantity Increase / Decrease
-* Dynamic Total Update
-
-### Book Listing
-
-* Category Filtering
-* Sorting Books
-
----
+The project uses DOM events and event delegation for controls rendered dynamically, including filters, hero indicators, quantity buttons, and item removal.
 
 ## Accessibility Considerations
 
-* Semantic HTML structure
-* Proper button usage
-* Form labels
-* Accessible navigation
-* Alt text for images
-* Keyboard-friendly interactions
+- Semantic landmarks and heading structure
+- Accessible labels for navigation, search, modal, filters, and controls
+- Native `button`, `form`, `label`, and input elements
+- `aria-current` for active navigation and hero indicators
+- `aria-hidden`, `aria-modal`, and `aria-labelledby` for the login dialog
+- Keyboard closing of the modal with `Escape`
+- Visible text content on CSS-generated book covers
 
----
+## Running the Project
 
-## Development Approach
+The project has no installation or build step. Serve the project directory with any local static server, then open `index.html`.
 
-The project was completed in the following stages:
+Example using VS Code Live Server:
 
-1. Analyze layout structure
-2. Identify reusable components
-3. Build semantic HTML
-4. Implement desktop layout
-5. Implement responsive layout
-6. Add JavaScript interactions
-7. Testing and UI refinement
-8. GitHub documentation and submission
+```text
+http://127.0.0.1:5500/index.html
+```
 
----
+## Current Scope and Limitations
+
+This submission is frontend-only. The following controls are intentionally presentation-level and are not connected to a backend service:
+
+- sign-in submission does not authenticate a real user;
+- wishlist state is not persisted;
+- checkout does not process an order or payment;
+- newsletter submission does not send data;
+- the modal does not yet implement a complete keyboard focus trap.
+
+These limitations are explicit so the documented behavior matches the implementation.
+
+## Development Process
+
+1. Analyzed visual hierarchy, page widths, grids, spacing, and repeated patterns in the supplied designs.
+2. Created semantic page structures and identified shared components.
+3. Built desktop layouts with reusable CSS variables, Flexbox, and Grid.
+4. Added tablet and mobile behavior with media queries.
+5. Separated JavaScript into data, core services, reusable components, and page modules.
+6. Implemented and verified the required browser interactions.
+7. Refined visual proportions and documented the completed scope and known limitations.
 
 ## AI Assistance
 
-AI tools were used as development assistants for:
-
-* Brainstorming component structure
-* Generating mock book data
-* Reviewing semantic HTML
-* Suggesting responsive CSS approaches
-* Reviewing JavaScript logic
-
-All implementation decisions, UI adjustments, debugging and final code integration were completed manually.
-
----
+AI tools were used as development support for code review, debugging suggestions, component-structure discussion, and documentation refinement. Final implementation decisions, integration, visual adjustments, and verification were reviewed and completed by the author.
 
 ## Author
 
-Full Name: Nguyen Toan
-
-Position Applied:
-Frontend Developer Intern
-
+**Nguyen Danh Minh Toan**  
+Frontend Developer Intern Candidate  
 Technical Test Submission for EZ Games

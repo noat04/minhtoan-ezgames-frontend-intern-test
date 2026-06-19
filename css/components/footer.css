@@ -14,14 +14,16 @@
 
 .footer-title {
   color: #fff;
-  font-size: 21px;
+  font-size: 16px;
+  line-height: 1;
 }
 
 .footer-title::before {
-  width: 34px;
-  height: 34px;
+  width: 27px;
+  height: 27px;
   background: var(--gold);
   color: #241d19;
+  font-size: 14px;
 }
 
 .footer-brand p,
