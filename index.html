@@ -1,11 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pages & Co. | Home</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
+
 <body>
-    
+    <header class="site-header">
+        <div class="container header-wrapper">
+            <a href="./index.html" class="logo" aria-label="Pages and Co home">
+                Pages & Co.
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="./index.html">Home</a>
+                <a href="./list.html">Books</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="search-btn" aria-label="Search books">
+                    Search
+                </button>
+
+                <button type="button" class="signin-btn" data-open-login>
+                    Sign in
+                </button>
+
+                <a href="./checkout.html" class="bag-link" aria-label="Shopping bag">
+                    Bag <span class="bag-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="container hero-wrapper">
+                <article class="hero-content">
+                    <p class="section-label">Bookstore</p>
+                    <h1 id="hero-title">Find your next favorite book</h1>
+                    <p>
+                        Discover curated stories, bestsellers, and fresh arrivals selected
+                        for every kind of reader.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="./list.html" class="btn btn-primary">Browse books</a>
+                        <button type="button" class="btn btn-outline">View featured</button>
+                    </div>
+                </article>
+
+                <figure class="hero-visual">
+                    <div class="book-cover large-cover" aria-hidden="true">
+                        The Lighthouse Keeper
+                    </div>
+                    <figcaption>Featured book of the month</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="genre-section" aria-labelledby="genre-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">Categories</p>
+                    <h2 id="genre-title">Browse by genre</h2>
+                </div>
+
+                <div class="genre-grid" id="genreGrid">
+                    <!-- Genre cards will be rendered by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="books-section" aria-labelledby="featured-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">This month</p>
+                    <h2 id="featured-title">Featured books</h2>
+                </div>
+
+                <div class="book-grid" id="featuredBooks">
+                    <!-- Book cards will be rendered by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="promo-section" aria-labelledby="promo-title">
+            <div class="container">
+                <article class="promo-banner">
+                    <div>
+                        <p class="section-label">Special offer</p>
+                        <h2 id="promo-title">Buy 2 books and get free shipping</h2>
+                        <p>Build your reading list with our hand-picked collections.</p>
+                    </div>
+
+                    <a href="./list.html" class="btn btn-primary">Shop now</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="books-section" aria-labelledby="bestseller-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">Popular</p>
+                    <h2 id="bestseller-title">Bestsellers</h2>
+                </div>
+
+                <div class="book-grid" id="bestsellerBooks">
+                    <!-- Book cards will be rendered by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="books-section" aria-labelledby="new-title">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-label">Fresh picks</p>
+                    <h2 id="new-title">New arrivals</h2>
+                </div>
+
+                <div class="book-grid" id="newBooks">
+                    <!-- Book cards will be rendered by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrapper">
+            <section>
+                <h2 class="footer-title">Pages & Co.</h2>
+                <p>Curated books for curious readers.</p>
+            </section>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="./index.html">Home</a>
+                <a href="./list.html">Books</a>
+                <a href="./checkout.html">Bag</a>
+            </nav>
+        </div>
+    </footer>
+
+    <aside class="login-modal" id="loginModal" aria-hidden="true">
+        <div class="modal-overlay" data-close-login></div>
+
+        <section class="modal-box" role="dialog" aria-modal="true" aria-labelledby="login-title">
+            <button type="button" class="modal-close" data-close-login aria-label="Close login modal">
+                ×
+            </button>
+
+            <h2 id="login-title">Sign in</h2>
+
+            <form id="loginForm" class="login-form">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required />
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required />
+
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+        </section>
+    </aside>
+
+    <script src="./js/data/books.js"></script>
+    <script src="./js/data/genres.js"></script>
+    <script src="./js/data/users.js"></script>
+    <script src="./js/components/login-modal.js"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>

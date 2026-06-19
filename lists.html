@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pages & Co. | Book Detail</title>
+    <title>Pages & Co. | Books</title>
 
     <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -31,70 +31,44 @@
     </header>
 
     <main>
-        <section class="detail-section" aria-labelledby="detail-title">
+        <section class="page-hero" aria-labelledby="books-title">
             <div class="container">
                 <nav class="breadcrumb" aria-label="Breadcrumb">
                     <a href="./index.html">Home</a>
                     <span>/</span>
-                    <a href="./list.html">Books</a>
-                    <span>/</span>
-                    <span>Book detail</span>
+                    <span>Books</span>
                 </nav>
 
-                <article class="book-detail" id="bookDetail">
-                    <figure class="detail-cover-wrapper">
-                        <div class="book-cover detail-cover" aria-hidden="true">
-                            Book Cover
-                        </div>
-                        <figcaption>Book cover preview</figcaption>
-                    </figure>
-
-                    <section class="detail-info">
-                        <p class="book-badge">Bestseller</p>
-                        <h1 id="detail-title">The Lighthouse Keeper</h1>
-                        <p class="book-author">by Mara Ellison</p>
-
-                        <p class="book-rating">★★★★★ 4.6</p>
-
-                        <p class="detail-price">
-                            <span>$18.00</span>
-                            <del>$24.00</del>
-                        </p>
-
-                        <p class="book-description">
-                            A widowed keeper and a runaway girl share a winter on a remote island.
-                            Together, they uncover stories hidden in the fog.
-                        </p>
-
-                        <div class="detail-actions">
-                            <button type="button" class="btn btn-primary" id="addToBagBtn">
-                                Add to bag
-                            </button>
-
-                            <button type="button" class="btn btn-outline" id="wishlistBtn">
-                                Add to wishlist
-                            </button>
-                        </div>
-
-                        <aside class="book-meta" aria-label="Book information">
-                            <p><strong>Genre:</strong> Fiction</p>
-                            <p><strong>Pages:</strong> 312</p>
-                            <p><strong>Published:</strong> 2023</p>
-                        </aside>
-                    </section>
-                </article>
+                <h1 id="books-title">All books</h1>
+                <p>14 titles in the collection</p>
             </div>
         </section>
 
-        <section class="books-section" aria-labelledby="related-title">
+        <section class="book-list-section" aria-labelledby="collection-title">
             <div class="container">
-                <div class="section-heading">
-                    <p class="section-label">Related</p>
-                    <h2 id="related-title">You may also like</h2>
+                <div class="list-toolbar">
+                    <div>
+                        <h2 id="collection-title">Book collection</h2>
+                        <p>Filter and sort books by your reading preference.</p>
+                    </div>
+
+                    <form class="sort-form">
+                        <label for="sortSelect">Sort by</label>
+                        <select id="sortSelect">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Top Rated</option>
+                        </select>
+                    </form>
                 </div>
 
-                <div class="book-grid" id="relatedBooks">
-                    <!-- Related books rendered by JavaScript -->
+                <nav class="filter-bar" id="filterBar" aria-label="Book genre filters">
+                    <!-- Filter buttons rendered by JavaScript -->
+                </nav>
+
+                <div class="book-grid" id="bookList">
+                    <!-- Book cards rendered by JavaScript -->
                 </div>
             </div>
         </section>
