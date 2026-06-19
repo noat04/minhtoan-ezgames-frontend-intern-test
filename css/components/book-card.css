@@ -1,0 +1,128 @@
+﻿.book-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 21px;
+}
+
+.book-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  background: rgba(255, 250, 241, 0.58);
+}
+
+.book-cover {
+  min-height: 197px;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 12px 14px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.16), rgba(0, 0, 0, 0.08)),
+    var(--cover, #4f7b63);
+  color: #fff;
+  box-shadow: inset -16px 0 26px rgba(0, 0, 0, 0.12);
+}
+
+.book-cover-title {
+  max-width: 105px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.book-cover-author {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.book-badge {
+  width: fit-content;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 13px;
+  background: rgba(255, 250, 241, 0.82);
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.book-cover .book-badge {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  border: 0;
+  border-radius: 2px;
+  padding: 2px 8px;
+  background: var(--gold);
+  color: #1f1b17;
+  font-size: 9px;
+}
+
+.book-cover .book-badge.is-new {
+  left: auto;
+  right: 8px;
+  background: #fff8ea;
+}
+
+.book-info {
+  padding-top: 9px;
+}
+
+.book-title {
+  min-height: 20px;
+  overflow: hidden;
+  color: #0d131a;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.22;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-author {
+  color: #5e5148;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.book-bottom {
+  margin-top: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.price {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+del {
+  margin-left: 5px;
+  color: #665a50;
+  font-size: 10px;
+}
+
+.rating {
+  color: #4e443b;
+  font-size: 11px;
+}
+
+.rating::before {
+  content: "\2605";
+  margin-right: 5px;
+  color: var(--gold);
+}

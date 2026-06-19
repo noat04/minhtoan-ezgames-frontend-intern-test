@@ -1,0 +1,25 @@
+﻿.footer-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #2c2723;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.logo::before,
+.footer-title::before,
+.modal-box::before {
+  content: "P";
+  width: 29px;
+  height: 29px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  background: var(--primary);
+  color: #fff8ea;
+  font-weight: 800;
+}
+
