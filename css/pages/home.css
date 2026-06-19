@@ -1,0 +1,145 @@
+﻿.hero-section {
+  padding: 26px 0 46px;
+}
+
+.hero-wrapper {
+  min-height: 427px;
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(120deg, rgba(53, 91, 69, 0.98), rgba(47, 88, 86, 0.98)),
+    var(--green);
+}
+
+.hero-content {
+  width: min(440px, 72%);
+  margin-left: 68px;
+  color: #fff8ea;
+}
+
+.promo-banner .section-label {
+  color: rgba(255, 248, 234, 0.78);
+}
+
+.hero-content h1 {
+  max-width: 420px;
+  margin: 18px 0 16px;
+  color: #fff8ea;
+  font-size: 48px;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.hero-content p:not(.section-label) {
+  max-width: 370px;
+  margin-bottom: 23px;
+  font-size: 16px;
+}
+
+.hero-content .btn-primary,
+.promo-banner .btn-primary {
+  min-width: 156px;
+  background: var(--gold);
+  color: #241d19;
+}
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 250, 241, 0.86);
+  transform: translateY(-50%);
+}
+
+.hero-arrow::before {
+  color: #26312b;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.hero-arrow-prev {
+  left: 12px;
+}
+
+.hero-arrow-prev::before {
+  content: "\2039";
+}
+
+.hero-arrow-next {
+  right: 12px;
+}
+
+.hero-arrow-next::before {
+  content: "\203A";
+}
+
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  display: flex;
+  gap: 6px;
+  transform: translateX(-50%);
+}
+
+.hero-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 248, 234, 0.62);
+}
+
+.hero-dots span:nth-child(2) {
+  width: 20px;
+  background: var(--gold);
+}
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+.genre-card {
+  min-height: 84px;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff8ea;
+  font-weight: 800;
+}
+
+.genre-card small {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.promo-banner {
+  min-height: 223px;
+  border-radius: var(--radius-sm);
+  padding: 40px 41px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--green);
+  color: #fff8ea;
+}
+
+.promo-banner h2 {
+  max-width: 455px;
+  margin: 7px 0 8px;
+  font-size: 34px;
+  line-height: 1.02;
+}
+
+.promo-banner p:not(.section-label) {
+  max-width: 440px;
+  font-size: 16px;
+}

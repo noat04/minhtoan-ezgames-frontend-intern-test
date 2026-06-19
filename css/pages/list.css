@@ -1,0 +1,61 @@
+﻿.list-toolbar {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+}
+
+.list-toolbar h2,
+.list-toolbar > div p {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-bar button {
+  min-height: 27px;
+  padding: 0 16px;
+  background: transparent;
+  color: #5b5046;
+  font-size: 12px;
+}
+
+.filter-bar button.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff8ea;
+  font-weight: 800;
+}
+
+.sort-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  color: #5b5046;
+  font-size: 12px;
+}
+
+.sort-form select {
+  width: 125px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper-light);
+  color: #211d19;
+}
+
+.book-list-section .book-grid {
+  padding-top: 8px;
+}
+
