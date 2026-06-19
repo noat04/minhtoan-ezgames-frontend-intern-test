@@ -65,55 +65,6 @@ The goal of this project is to demonstrate:
 
 No CSS framework or UI library was used.
 
----
-
-## Project Structure
-
-project/
-
-├── assets/
-│ ├── images/
-│ └── icons/
-│
-├── css/
-│ ├── base/
-│ │ ├── reset.css
-│ │ ├── variables.css
-│ │ └── global.css
-│ │
-│ ├── components/
-│ │ ├── header.css
-│ │ ├── footer.css
-│ │ ├── button.css
-│ │ ├── book-card.css
-│ │ ├── book-grid.css
-│ │ ├── breadcrumb.css
-│ │ ├── login-modal.css
-│ │ └── cart-item.css
-│ │
-│ └── style.css
-│
-├── js/
-│ ├── data/
-│ │ └── books.js
-│ │
-│ ├── components/
-│ │ ├── slider.js
-│ │ ├── login-modal.js
-│ │ ├── cart.js
-│ │ ├── filter.js
-│ │ └── sort.js
-│ │
-│ └── main.js
-│
-├── index.html
-├── list.html
-├── detail.html
-├── checkout.html
-└── README.md
-
----
-
 ## Reusable Components
 
 The project was designed around reusable UI components:
